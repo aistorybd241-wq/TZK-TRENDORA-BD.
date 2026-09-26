@@ -1,546 +1,1318 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>TZK Trendora BD | Premium Fashion Store</title>
+<title>TZK Trendora BD | Premium Fashion</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0b0b0b;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+:root{
+    --gold:#d8b56a;
+    --gold-light:#f3d995;
+    --cream:#f7f1e3;
+    --dark:#0b0b0b;
+    --card:#151515;
+    --gray:#b8b8b8;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:9999;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 7%;
+
+    background:rgba(8,8,8,.88);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(216,181,106,.2);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
+
+    background:linear-gradient(
+        90deg,
+        #fff,
+        var(--gold-light),
+        var(--gold)
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:.5px;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--gold-light);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:88vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    position:relative;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(216,181,106,.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #050505,
+            #151515,
+            #080808
+        );
+
+    overflow:hidden;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border:1px solid rgba(216,181,106,.15);
+    border-radius:50%;
+
+    animation:rotate 20s linear infinite;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.small-title{
+    color:var(--gold-light);
+    font-size:13px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,82px);
+    line-height:1.05;
+    margin-bottom:25px;
+    font-weight:900;
+}
+
+.hero h1 span{
+    background:linear-gradient(
+        90deg,
+        #fff,
+        var(--gold-light),
+        var(--gold)
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+
+    color:#c7c7c7;
+    font-size:18px;
+    line-height:1.8;
+
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.35s;
+}
+
+.primary-btn{
+    background:linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
+
+    color:#111;
+
+    box-shadow:
+        0 10px 30px rgba(216,181,106,.2);
+}
+
+.primary-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 15px 40px rgba(216,181,106,.35);
+}
+
+.secondary-btn{
+    border:1px solid rgba(255,255,255,.25);
+    color:white;
+    background:rgba(255,255,255,.04);
+}
+
+.secondary-btn:hover{
+    border-color:var(--gold);
+    color:var(--gold-light);
+}
+
+
+/* =========================
+   CEO
+========================= */
+
+.ceo-section{
+    text-align:center;
+
+    padding:35px 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #111,
+            #1b1b1b,
+            #111
+        );
+
+    border-top:1px solid rgba(216,181,106,.12);
+    border-bottom:1px solid rgba(216,181,106,.12);
+}
+
+.ceo-label{
+    font-size:12px;
+    letter-spacing:4px;
+    color:#999;
+    margin-bottom:8px;
+}
+
+.ceo-name{
+    font-size:clamp(22px,4vw,38px);
+    font-weight:900;
+
+    background:linear-gradient(
+        90deg,
+        #fff,
+        var(--gold-light),
+        var(--gold)
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    scroll-margin-top:90px;
+}
+
+.section{
+    max-width:1250px;
+    margin:auto;
+    padding:100px 25px;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-heading small{
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:12px;
+}
+
+.section-heading h2{
+    font-size:clamp(32px,5vw,50px);
+    margin-top:12px;
+}
+
+.section-heading p{
+    color:#999;
+    margin-top:15px;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.product-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+
+    gap:28px;
+}
+
+.product{
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191919,
+            #0e0e0e
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:.45s;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+}
+
+.product:hover{
+    transform:translateY(-10px);
+
+    border-color:
+        rgba(216,181,106,.5);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.5),
+        0 0 35px rgba(216,181,106,.08);
+}
+
+.product-image{
+    position:relative;
+    overflow:hidden;
+}
+
+.product img{
+    width:100%;
+    height:390px;
+
+    object-fit:cover;
+    display:block;
+
+    transition:.6s;
+}
+
+.product:hover img{
+    transform:scale(1.06);
+}
+
+.badge{
+    position:absolute;
+    top:16px;
+    left:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold)
+        );
+
+    color:#111;
+
+    padding:7px 13px;
+
+    border-radius:30px;
+
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.product-info{
+    padding:25px;
+}
+
+.product-info h3{
+    font-size:21px;
+    line-height:1.4;
+    margin-bottom:12px;
+}
+
+.price{
+    font-size:28px;
+    font-weight:900;
+
+    color:var(--gold-light);
+
+    margin-bottom:15px;
+}
+
+.old-price{
+    font-size:14px;
+    color:#777;
+    text-decoration:line-through;
+    margin-left:8px;
+}
+
+.description{
+    color:#aaa;
+    line-height:1.7;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.features{
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    padding:15px 0;
+
+    color:#ccc;
+
+    line-height:2;
+
+    font-size:13px;
+}
+
+.sizes{
+    margin-top:17px;
+
+    padding:14px;
+
+    background:rgba(255,255,255,.04);
+
+    border-radius:12px;
+
+    color:#ccc;
+
+    line-height:1.9;
+
+    font-size:13px;
+}
+
+.order-btn{
+    display:block;
+
+    text-align:center;
+
+    margin-top:20px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:900;
+
+    color:#111;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold)
+        );
+
+    transition:.3s;
+}
+
+.order-btn:hover{
+    transform:scale(1.02);
+
+    box-shadow:
+        0 10px 30px rgba(216,181,106,.2);
+}
+
+
+/* =========================
+   WHY US
+========================= */
+
+.why-section{
+    background:#101010;
+
+    border-top:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.why-grid{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+    padding:0 25px 100px;
+}
+
+.why-card{
+    text-align:center;
+
+    padding:35px 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191919,
+            #111
+        );
+
+    border:1px solid rgba(255,255,255,.07);
+
+    border-radius:18px;
+
+    transition:.3s;
+}
+
+.why-card:hover{
+    border-color:
+        rgba(216,181,106,.35);
+
+    transform:translateY(-5px);
+}
+
+.icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.why-card h3{
+    margin-bottom:10px;
+}
+
+.why-card p{
+    color:#999;
+    font-size:14px;
+    line-height:1.6;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    max-width:900px;
+    margin:auto;
+
+    text-align:center;
+
+    padding:100px 25px;
+}
+
+.about h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.about p{
+    color:#aaa;
+    line-height:2;
+    font-size:16px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    text-align:center;
+
+    padding:100px 25px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(216,181,106,.12),
+            transparent 50%
+        ),
+        #101010;
+
+    border-top:1px solid rgba(216,181,106,.12);
+}
+
+.contact h2{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.contact p{
+    color:#aaa;
+    margin-bottom:25px;
+    font-size:17px;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:white;
+
+    display:inline-block;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 12px 30px rgba(37,211,102,.25);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+
+    padding:35px 20px;
+
+    background:#050505;
+
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+footer .footer-logo{
+    font-size:22px;
+    font-weight:bold;
+
+    color:var(--gold-light);
+
+    margin-bottom:10px;
+}
+
+footer p{
+    color:#666;
+    font-size:13px;
+    line-height:1.8;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes rotate{
+
+    from{
+        transform:rotate(0deg);
     }
 
-    body {
-      background: #f5f5f5;
-      color: #111;
+    to{
+        transform:rotate(360deg);
     }
 
-    /* HEADER */
-    header {
-      background: #111;
-      color: white;
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    header{
+        padding:15px 18px;
+        flex-direction:column;
+        gap:14px;
     }
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      letter-spacing: 1px;
+    .logo{
+        font-size:21px;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
+    nav{
+        gap:16px;
     }
 
-    nav a:hover {
-      color: #ff4d4d;
+    nav a{
+        font-size:12px;
     }
 
-    /* HERO */
-    .hero {
-      min-height: 65vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(135deg, #111, #333, #555);
-      color: white;
+    .hero{
+        min-height:78vh;
+        padding:50px 18px;
     }
 
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 15px;
+    .hero h1{
+        font-size:43px;
     }
 
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 25px;
+    .hero p{
+        font-size:15px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 13px 28px;
-      background: #ff4d4d;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
+    .section{
+        padding:75px 17px;
     }
 
-    .btn:hover {
-      background: #e60000;
-      transform: scale(1.05);
+    .product-grid{
+        grid-template-columns:1fr;
     }
 
-    /* CEO */
-    .ceo {
-      background: white;
-      text-align: center;
-      padding: 30px 15px;
-      font-size: 36px;
-      font-weight: bold;
-      letter-spacing: 1px;
+    .product img{
+        height:420px;
     }
 
-    .ceo span {
-      color: #e63946;
+    .about{
+        padding:75px 20px;
     }
 
-    /* PRODUCTS */
-    .products {
-      max-width: 1200px;
-      margin: auto;
-      padding: 55px 20px;
+    .about h2{
+        font-size:34px;
     }
 
-    .products-title {
-      text-align: center;
-      font-size: 35px;
-      margin-bottom: 35px;
+    .contact{
+        padding:75px 20px;
     }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+    .contact h2{
+        font-size:35px;
     }
 
-    .product {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.12);
-      transition: 0.3s;
-    }
+}
 
-    .product:hover {
-      transform: translateY(-7px);
-    }
-
-    .product img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      display: block;
-      background: #ddd;
-    }
-
-    .product-info {
-      padding: 20px;
-    }
-
-    .product h2 {
-      font-size: 21px;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      font-size: 25px;
-      font-weight: bold;
-      color: #e63946;
-      margin-bottom: 15px;
-    }
-
-    .description {
-      color: #444;
-      line-height: 1.7;
-      margin-bottom: 15px;
-    }
-
-    .details {
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-
-    .sizes {
-      background: #f1f1f1;
-      padding: 12px;
-      border-radius: 8px;
-      line-height: 1.8;
-    }
-
-    .buy-btn {
-      display: block;
-      text-align: center;
-      background: #111;
-      color: white;
-      text-decoration: none;
-      padding: 13px;
-      border-radius: 8px;
-      margin-top: 18px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .buy-btn:hover {
-      background: #25D366;
-    }
-
-    /* ABOUT */
-    .about {
-      background: white;
-      text-align: center;
-      padding: 55px 20px;
-      margin-top: 20px;
-    }
-
-    .about h2,
-    .contact h2 {
-      font-size: 32px;
-      margin-bottom: 18px;
-    }
-
-    .about p {
-      max-width: 750px;
-      margin: auto;
-      line-height: 1.8;
-      color: #444;
-      font-size: 17px;
-    }
-
-    /* CONTACT */
-    .contact {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 55px 20px;
-      margin-top: 20px;
-    }
-
-    .contact p {
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #000;
-      color: white;
-      text-align: center;
-      padding: 25px;
-    }
-
-    footer p {
-      margin: 5px;
-    }
-
-    /* MOBILE */
-    @media (max-width: 600px) {
-
-      header {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .logo {
-        font-size: 22px;
-      }
-
-      nav a {
-        margin: 0 6px;
-        font-size: 14px;
-      }
-
-      .hero {
-        min-height: 55vh;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      .ceo {
-        font-size: 25px;
-      }
-
-      .products-title {
-        font-size: 28px;
-      }
-
-      .product img {
-        height: 330px;
-      }
-    }
-  </style>
+</style>
 </head>
+
 
 <body>
 
-  <!-- HEADER -->
-  <header>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
     <div class="logo">
-      TZK Trendora BD
+        TZK TRENDORA BD
     </div>
 
     <nav>
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+
+        <a href="#home">Home</a>
+
+        <a href="#products">Shop</a>
+
+        <a href="#about">About</a>
+
+        <a href="#contact">Contact</a>
+
     </nav>
-  </header>
+
+</header>
 
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div>
-      <h1>Welcome to TZK Trendora BD</h1>
 
-      <p>
-        Premium Fashion • Trendy Style • Affordable Price
-      </p>
+<!-- =========================
+     HERO
+========================= -->
 
-      <a href="#products" class="btn">
-        Shop Now
-      </a>
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            PREMIUM FASHION BRAND
+        </div>
+
+        <h1>
+            Elevate Your
+            <span>Everyday Style</span>
+        </h1>
+
+        <p>
+            Discover premium quality fashion designed
+            for those who believe that style is not just
+            what you wear — it's who you are.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#products"
+               class="btn primary-btn">
+                SHOP COLLECTION
+            </a>
+
+            <a href="#contact"
+               class="btn secondary-btn">
+                CONTACT US
+            </a>
+
+        </div>
+
     </div>
-  </section>
+
+</section>
 
 
-  <!-- CEO -->
-  <section class="ceo">
-    CEO: <span>MD. TAHMID ZARIF KHAN</span>
-  </section>
+
+<!-- =========================
+     CEO
+========================= -->
+
+<div class="ceo-section">
+
+    <div class="ceo-label">
+        FOUNDER & CEO
+    </div>
+
+    <div class="ceo-name">
+        MD. TAHMID ZARIF KHAN
+    </div>
+
+</div>
 
 
-  <!-- PRODUCTS -->
-  <section class="products" id="products">
 
-    <h2 class="products-title">
-      Our Premium Collection
-    </h2>
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section class="section" id="products">
+
+    <div class="section-heading">
+
+        <small>
+            OUR COLLECTION
+        </small>
+
+        <h2>
+            Premium Essentials
+        </h2>
+
+        <p>
+            Designed for comfort. Made for style.
+        </p>
+
+    </div>
+
 
     <div class="product-grid">
 
 
-      <!-- PRODUCT 1 -->
-      <div class="product">
+        <!-- PRODUCT 1 -->
 
-        <img
-          src="33371.jpg"
-          alt="Purple Premium Acid Wash T-Shirt"
-        >
+        <div class="product">
 
-        <div class="product-info">
+            <div class="product-image">
 
-          <h2>
-            Premium Acid Wash Drop Shoulder T-Shirt
-          </h2>
+                <span class="badge">
+                    PREMIUM
+                </span>
 
-          <div class="price">
-            ৳670
-          </div>
+                <img
+                    src="33371.jpg"
+                    alt="Purple Acid Wash T-Shirt"
+                >
 
-          <div class="description">
-            বর্তমানে সবচেয়ে ডিমান্ডেবল এবং
-            কোয়ালিটি সম্পূর্ণ এসিড ওয়াশের
-            ড্রপ সোল্ডার টি-শার্ট।
-          </div>
+            </div>
 
-          <div class="details">
-            <b>ফেব্রিক্স:</b> ১০০% কটন Acid Wash<br>
-            <b>GSM:</b> ২২০+ GSM<br>
-            <b>Fit:</b> Drop Shoulder<br>
-            <b>Quality:</b> Premium & Comfortable
-          </div>
+            <div class="product-info">
 
-          <div class="sizes">
-            <b>Available Sizes:</b><br>
-            M – Length: 27 | Chest: 40<br>
-            L – Length: 28 | Chest: 42<br>
-            XL – Length: 29 | Chest: 44
-          </div>
+                <h3>
+                    Premium Acid Wash
+                    Drop Shoulder T-Shirt
+                </h3>
 
-          <a
-            class="buy-btn"
-            href="https://wa.me/8801406825732?text=Hello%20TZK%20Trendora%20BD,%20I%20want%20to%20order%20the%20Purple%20T-Shirt."
-            target="_blank"
-          >
-            🛒 Order Now
-          </a>
+                <div class="price">
+                    ৳670
+                    <span class="old-price">
+                        ৳750
+                    </span>
+                </div>
 
-        </div>
-      </div>
+                <div class="description">
 
+                    বর্তমানে সবচেয়ে ডিমান্ডেবল
+                    Premium Acid Wash Drop Shoulder
+                    T-Shirt। স্টাইলিশ লুকের সাথে
+                    আরামদায়ক ফিট।
 
-      <!-- PRODUCT 2 -->
-      <div class="product">
+                </div>
 
-        <img
-          src="33369.jpg"
-          alt="Beige Premium Acid Wash T-Shirt"
-        >
+                <div class="features">
 
-        <div class="product-info">
+                    <b>Fabric:</b> 100% Cotton Acid Wash<br>
 
-          <h2>
-            Premium Acid Wash Drop Shoulder T-Shirt
-          </h2>
+                    <b>GSM:</b> 220+ GSM<br>
 
-          <div class="price">
-            ৳670
-          </div>
+                    <b>Fit:</b> Drop Shoulder<br>
 
-          <div class="description">
-            সফ্ট ফেব্রিক্স, প্রিমিয়াম লুক এবং
-            টেকসই কোয়ালিটির স্টাইলিশ
-            Acid Wash Drop Shoulder T-Shirt।
-          </div>
+                    <b>Quality:</b> Premium & Comfortable
 
-          <div class="details">
-            <b>ফেব্রিক্স:</b> ১০০% কটন Acid Wash<br>
-            <b>GSM:</b> ২২০+ GSM<br>
-            <b>Fit:</b> Drop Shoulder<br>
-            <b>Look:</b> Premium & Stylish
-          </div>
+                </div>
 
-          <div class="sizes">
-            <b>Available Sizes:</b><br>
-            M – Length: 27 | Chest: 40<br>
-            L – Length: 28 | Chest: 42<br>
-            XL – Length: 29 | Chest: 44
-          </div>
+                <div class="sizes">
 
-          <a
-            class="buy-btn"
-            href="https://wa.me/8801406825732?text=Hello%20TZK%20Trendora%20BD,%20I%20want%20to%20order%20the%20Beige%20T-Shirt."
-            target="_blank"
-          >
-            🛒 Order Now
-          </a>
+                    <b>Available Sizes</b><br>
+
+                    M — Length 27 | Chest 40<br>
+
+                    L — Length 28 | Chest 42<br>
+
+                    XL — Length 29 | Chest 44
+
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="https://wa.me/8801406825732?text=Hello%20TZK%20Trendora%20BD,%20I%20want%20to%20order%20the%20Purple%20T-Shirt."
+                    target="_blank">
+
+                    🛒 ORDER NOW
+
+                </a>
+
+            </div>
 
         </div>
-      </div>
 
 
-      <!-- PRODUCT 3 -->
-      <div class="product">
 
-        <img
-          src="33367.jpg"
-          alt="Black Premium Acid Wash T-Shirt"
-        >
+        <!-- PRODUCT 2 -->
 
-        <div class="product-info">
+        <div class="product">
 
-          <h2>
-            Premium Acid Wash Drop Shoulder T-Shirt
-          </h2>
+            <div class="product-image">
 
-          <div class="price">
-            ৳670
-          </div>
+                <span class="badge">
+                    BEST SELLER
+                </span>
 
-          <div class="description">
-            ট্রেন্ডি ডিজাইন, সফ্ট কটন ফেব্রিক্স
-            এবং প্রিমিয়াম Acid Wash ফিনিশের
-            Drop Shoulder T-Shirt।
-          </div>
+                <img
+                    src="33369.jpg"
+                    alt="Beige Acid Wash T-Shirt"
+                >
 
-          <div class="details">
-            <b>ফেব্রিক্স:</b> ১০০% কটন Acid Wash<br>
-            <b>GSM:</b> ২২০+ GSM<br>
-            <b>Fit:</b> Drop Shoulder<br>
-            <b>Quality:</b> Soft, Premium & Durable
-          </div>
+            </div>
 
-          <div class="sizes">
-            <b>Available Sizes:</b><br>
-            M – Length: 27 | Chest: 40<br>
-            L – Length: 28 | Chest: 42<br>
-            XL – Length: 29 | Chest: 44
-          </div>
+            <div class="product-info">
 
-          <a
-            class="buy-btn"
-            href="https://wa.me/8801406825732?text=Hello%20TZK%20Trendora%20BD,%20I%20want%20to%20order%20the%20Black%20T-Shirt."
-            target="_blank"
-          >
-            🛒 Order Now
-          </a>
+                <h3>
+                    Premium Acid Wash
+                    Drop Shoulder T-Shirt
+                </h3>
+
+                <div class="price">
+                    ৳670
+                    <span class="old-price">
+                        ৳750
+                    </span>
+                </div>
+
+                <div class="description">
+
+                    Soft fabric, premium look এবং
+                    stylish Acid Wash finish-এর
+                    Drop Shoulder T-Shirt।
+
+                </div>
+
+                <div class="features">
+
+                    <b>Fabric:</b> 100% Cotton Acid Wash<br>
+
+                    <b>GSM:</b> 220+ GSM<br>
+
+                    <b>Fit:</b> Drop Shoulder<br>
+
+                    <b>Look:</b> Premium & Stylish
+
+                </div>
+
+                <div class="sizes">
+
+                    <b>Available Sizes</b><br>
+
+                    M — Length 27 | Chest 40<br>
+
+                    L — Length 28 | Chest 42<br>
+
+                    XL — Length 29 | Chest 44
+
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="https://wa.me/8801406825732?text=Hello%20TZK%20Trendora%20BD,%20I%20want%20to%20order%20the%20Beige%20T-Shirt."
+                    target="_blank">
+
+                    🛒 ORDER NOW
+
+                </a>
+
+            </div>
 
         </div>
-      </div>
+
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <span class="badge">
+                    NEW ARRIVAL
+                </span>
+
+                <img
+                    src="33367.jpg"
+                    alt="Black Acid Wash T-Shirt"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Premium Acid Wash
+                    Drop Shoulder T-Shirt
+                </h3>
+
+                <div class="price">
+                    ৳670
+                    <span class="old-price">
+                        ৳750
+                    </span>
+                </div>
+
+                <div class="description">
+
+                    Trendy design, soft cotton fabric
+                    এবং premium Acid Wash finish।
+                    আপনার everyday style-এর জন্য।
+
+                </div>
+
+                <div class="features">
+
+                    <b>Fabric:</b> 100% Cotton Acid Wash<br>
+
+                    <b>GSM:</b> 220+ GSM<br>
+
+                    <b>Fit:</b> Drop Shoulder<br>
+
+                    <b>Quality:</b> Soft & Durable
+
+                </div>
+
+                <div class="sizes">
+
+                    <b>Available Sizes</b><br>
+
+                    M — Length 27 | Chest 40<br>
+
+                    L — Length 28 | Chest 42<br>
+
+                    XL — Length 29 | Chest 44
+
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="https://wa.me/8801406825732?text=Hello%20TZK%20Trendora%20BD,%20I%20want%20to%20order%20the%20Black%20T-Shirt."
+                    target="_blank">
+
+                    🛒 ORDER NOW
+
+                </a>
+
+            </div>
+
+        </div>
+
 
     </div>
-  </section>
+
+</section>
 
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
+
+<!-- =========================
+     WHY TZK
+========================= -->
+
+<section class="why-section">
+
+    <div class="section-heading" style="padding-top:80px;">
+
+        <small>
+            WHY TZK TRENDORA
+        </small>
+
+        <h2>
+            Made For Your Style
+        </h2>
+
+    </div>
+
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <div class="icon">
+                ✦
+            </div>
+
+            <h3>
+                Premium Quality
+            </h3>
+
+            <p>
+                Carefully selected fabric and
+                premium finishing.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                ◈
+            </div>
+
+            <h3>
+                Trendy Design
+            </h3>
+
+            <p>
+                Modern styles designed for
+                today's fashion.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                ♢
+            </div>
+
+            <h3>
+                Comfortable Fit
+            </h3>
+
+            <p>
+                Designed to give you comfort
+                throughout the day.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                ✓
+            </div>
+
+            <h3>
+                Easy Ordering
+            </h3>
+
+            <p>
+                Order directly through WhatsApp
+                in just a few clicks.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+    <div class="section-heading">
+
+        <small>
+            OUR STORY
+        </small>
+
+        <h2>
+            About TZK Trendora BD
+        </h2>
+
+    </div>
+
+    <p>
+
+        TZK Trendora BD is a modern online fashion
+        store dedicated to bringing stylish,
+        comfortable and premium-quality fashion
+        products to our customers.
+
+        <br><br>
+
+        আমাদের লক্ষ্য হলো ট্রেন্ডি ডিজাইন,
+        ভালো মানের পণ্য এবং সাশ্রয়ী মূল্যের
+        মাধ্যমে গ্রাহকদের জন্য একটি
+        সুন্দর shopping experience তৈরি করা।
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
 
     <h2>
-      About TZK Trendora BD
+        Let's Talk
     </h2>
 
     <p>
-      TZK Trendora BD is an online fashion store
-      dedicated to bringing trendy, stylish and
-      affordable fashion products to our customers.
-      আমাদের লক্ষ্য হলো ভালো মানের ফ্যাশন পণ্য
-      সহজে ও সাশ্রয়ী মূল্যে গ্রাহকদের কাছে পৌঁছে দেওয়া।
-    </p>
-
-  </section>
-
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-
-    <h2>
-      Contact Us
-    </h2>
-
-    <p>
-      📱 WhatsApp: 01406825732
+        আপনার পছন্দের product order করতে
+        আমাদের সাথে যোগাযোগ করুন।
     </p>
 
     <p>
-      👤 CEO: MD. TAHMID ZARIF KHAN
+        📱 WhatsApp: 01406825732
+    </p>
+
+    <p>
+        👤 CEO: MD. TAHMID ZARIF KHAN
     </p>
 
     <a
-      class="btn"
-      href="https://wa.me/8801406825732"
-      target="_blank"
-    >
-      💬 Chat on WhatsApp
+        class="whatsapp"
+        href="https://wa.me/8801406825732"
+        target="_blank">
+
+        💬 CHAT ON WHATSAPP
+
     </a>
 
-  </section>
+</section>
 
 
-  <!-- FOOTER -->
-  <footer>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        TZK TRENDORA BD
+    </div>
 
     <p>
-      © 2026 TZK Trendora BD
+        Premium Fashion • Trendy Style • Affordable Price
     </p>
 
     <p>
-      All Rights Reserved.
+        © 2026 TZK Trendora BD — All Rights Reserved.
     </p>
 
-  </footer>
+</footer>
+
 
 </body>
 </html>
