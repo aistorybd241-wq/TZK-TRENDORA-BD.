@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TZK Trendora BD | Premium Fashion Store</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #111;
+    }
+
+    /* HEADER */
+    header {
+      background: #111;
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ff4d4d;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 65vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #111, #333, #555);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 28px;
+      background: #ff4d4d;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #e60000;
+      transform: scale(1.05);
+    }
+
+    /* CEO */
+    .ceo {
+      background: white;
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .ceo span {
+      color: #e63946;
+    }
+
+    /* PRODUCTS */
+    .products {
+      max-width: 1200px;
+      margin: auto;
+      padding: 55px 20px;
+    }
+
+    .products-title {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 35px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-7px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+      background: #ddd;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product h2 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 25px;
+      font-weight: bold;
+      color: #e63946;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .sizes {
+      background: #f1f1f1;
+      padding: 12px;
+      border-radius: 8px;
+      line-height: 1.8;
+    }
+
+    .buy-btn {
+      display: block;
+      text-align: center;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      padding: 13px;
+      border-radius: 8px;
+      margin-top: 18px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .buy-btn:hover {
+      background: #25D366;
+    }
+
+    /* ABOUT */
+    .about {
+      background: white;
+      text-align: center;
+      padding: 55px 20px;
+      margin-top: 20px;
+    }
+
+    .about h2,
+    .contact h2 {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .about p {
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.8;
+      color: #444;
+      font-size: 17px;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+      margin-top: 20px;
+    }
+
+    .contact p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      nav a {
+        margin: 0 6px;
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 55vh;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .ceo {
+        font-size: 25px;
+      }
+
+      .products-title {
+        font-size: 28px;
+      }
+
+      .product img {
+        height: 330px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      TZK Trendora BD
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div>
+      <h1>Welcome to TZK Trendora BD</h1>
+
+      <p>
+        Premium Fashion • Trendy Style • Affordable Price
+      </p>
+
+      <a href="#products" class="btn">
+        Shop Now
+      </a>
+    </div>
+  </section>
+
+
+  <!-- CEO -->
+  <section class="ceo">
+    CEO: <span>MD. TAHMID ZARIF KHAN</span>
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+
+    <h2 class="products-title">
+      Our Premium Collection
+    </h2>
+
+    <div class="product-grid">
+
+
+      <!-- PRODUCT 1 -->
+      <div class="product">
+
+        <img
+          src="33371.jpg"
+          alt="Purple Premium Acid Wash T-Shirt"
+        >
+
+        <div class="product-info">
+
+          <h2>
+            Premium Acid Wash Drop Shoulder T-Shirt
+          </h2>
+
+          <div class="price">
+            ৳670
+          </div>
+
+          <div class="description">
+            বর্তমানে সবচেয়ে ডিমান্ডেবল এবং
+            কোয়ালিটি সম্পূর্ণ এসিড ওয়াশের
+            ড্রপ সোল্ডার টি-শার্ট।
+          </div>
+
+          <div class="details">
+            <b>ফেব্রিক্স:</b> ১০০% কটন Acid Wash<br>
+            <b>GSM:</b> ২২০+ GSM<br>
+            <b>Fit:</b> Drop Shoulder<br>
+            <b>Quality:</b> Premium & Comfortable
+          </div>
+
+          <div class="sizes">
+            <b>Available Sizes:</b><br>
+            M – Length: 27 | Chest: 40<br>
+            L – Length: 28 | Chest: 42<br>
+            XL – Length: 29 | Chest: 44
+          </div>
+
+          <a
+            class="buy-btn"
+            href="https://wa.me/8801406825732?text=Hello%20TZK%20Trendora%20BD,%20I%20want%20to%20order%20the%20Purple%20T-Shirt."
+            target="_blank"
+          >
+            🛒 Order Now
+          </a>
+
+        </div>
+      </div>
+
+
+      <!-- PRODUCT 2 -->
+      <div class="product">
+
+        <img
+          src="33369.jpg"
+          alt="Beige Premium Acid Wash T-Shirt"
+        >
+
+        <div class="product-info">
+
+          <h2>
+            Premium Acid Wash Drop Shoulder T-Shirt
+          </h2>
+
+          <div class="price">
+            ৳670
+          </div>
+
+          <div class="description">
+            সফ্ট ফেব্রিক্স, প্রিমিয়াম লুক এবং
+            টেকসই কোয়ালিটির স্টাইলিশ
+            Acid Wash Drop Shoulder T-Shirt।
+          </div>
+
+          <div class="details">
+            <b>ফেব্রিক্স:</b> ১০০% কটন Acid Wash<br>
+            <b>GSM:</b> ২২০+ GSM<br>
+            <b>Fit:</b> Drop Shoulder<br>
+            <b>Look:</b> Premium & Stylish
+          </div>
+
+          <div class="sizes">
+            <b>Available Sizes:</b><br>
+            M – Length: 27 | Chest: 40<br>
+            L – Length: 28 | Chest: 42<br>
+            XL – Length: 29 | Chest: 44
+          </div>
+
+          <a
+            class="buy-btn"
+            href="https://wa.me/8801406825732?text=Hello%20TZK%20Trendora%20BD,%20I%20want%20to%20order%20the%20Beige%20T-Shirt."
+            target="_blank"
+          >
+            🛒 Order Now
+          </a>
+
+        </div>
+      </div>
+
+
+      <!-- PRODUCT 3 -->
+      <div class="product">
+
+        <img
+          src="33367.jpg"
+          alt="Black Premium Acid Wash T-Shirt"
+        >
+
+        <div class="product-info">
+
+          <h2>
+            Premium Acid Wash Drop Shoulder T-Shirt
+          </h2>
+
+          <div class="price">
+            ৳670
+          </div>
+
+          <div class="description">
+            ট্রেন্ডি ডিজাইন, সফ্ট কটন ফেব্রিক্স
+            এবং প্রিমিয়াম Acid Wash ফিনিশের
+            Drop Shoulder T-Shirt।
+          </div>
+
+          <div class="details">
+            <b>ফেব্রিক্স:</b> ১০০% কটন Acid Wash<br>
+            <b>GSM:</b> ২২০+ GSM<br>
+            <b>Fit:</b> Drop Shoulder<br>
+            <b>Quality:</b> Soft, Premium & Durable
+          </div>
+
+          <div class="sizes">
+            <b>Available Sizes:</b><br>
+            M – Length: 27 | Chest: 40<br>
+            L – Length: 28 | Chest: 42<br>
+            XL – Length: 29 | Chest: 44
+          </div>
+
+          <a
+            class="buy-btn"
+            href="https://wa.me/8801406825732?text=Hello%20TZK%20Trendora%20BD,%20I%20want%20to%20order%20the%20Black%20T-Shirt."
+            target="_blank"
+          >
+            🛒 Order Now
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <h2>
+      About TZK Trendora BD
+    </h2>
+
+    <p>
+      TZK Trendora BD is an online fashion store
+      dedicated to bringing trendy, stylish and
+      affordable fashion products to our customers.
+      আমাদের লক্ষ্য হলো ভালো মানের ফ্যাশন পণ্য
+      সহজে ও সাশ্রয়ী মূল্যে গ্রাহকদের কাছে পৌঁছে দেওয়া।
+    </p>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <h2>
+      Contact Us
+    </h2>
+
+    <p>
+      📱 WhatsApp: 01406825732
+    </p>
+
+    <p>
+      👤 CEO: MD. TAHMID ZARIF KHAN
+    </p>
+
+    <a
+      class="btn"
+      href="https://wa.me/8801406825732"
+      target="_blank"
+    >
+      💬 Chat on WhatsApp
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026 TZK Trendora BD
+    </p>
+
+    <p>
+      All Rights Reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
